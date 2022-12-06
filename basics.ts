@@ -35,9 +35,42 @@ foundMovie = 1; // type : any
 foundMovie // type : any
 
 // 파라미터에도 타입을 지정해야한다.
-function greet (person: string) {
+function greet (person: string) { // 만약 파라미터를 지정해 주지 않으면 type은 "any type"
     return `hi there, ${person}`
 }
 greet("jangwoo")
 greet(3) // error
 
+const doSomething = (person : string, age : number, isFunny: boolean) => {};
+
+doSomething("kim", 23, true)
+doSomething("kim", 23, "aa") // error
+// 파라미터의 타입 순서도 맞춰야함,,
+
+function greetHandler (person: string = "stranger") {
+    return `Hi there, ${person}`;
+}
+
+
+function square(num: number) {
+    return num * num;
+}
+
+square(1)
+// TS는 변수타입을 추론한 것 처럼 반환타입도 추론이 가능하다.
+// 만약 함수안에 return 값을 설정하지 않으면 어떻게 될까?
+
+function square2(num: number) {
+    num * num;
+}
+square2(2)
+// 타입은 number가 아닌 void를 나타낸다.
+// void는 아무거도 반환하지 않는다.
+
+function rando(num: number) {
+    if (Math.random() < 0.5) {
+        return num.toString();
+    }
+    return num;
+}
+// 위 함수는 유니온 타입이다, 반환값이 두 타입을 반환한다.
