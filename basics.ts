@@ -74,3 +74,55 @@ function rando(num: number) {
     return num;
 }
 // 위 함수는 유니온 타입이다, 반환값이 두 타입을 반환한다.
+
+const color = ["red", "orange", "yellow"];
+// color.map(color => {
+//     return color.toUpperCase()
+// })
+color
+
+const red = "red"
+red.toUpperCase()
+
+// 이때 파라미터 타입을 명시하지 않으면 type은 any를 반환한다.
+function 함수(x: number) :void{
+	return x * 2
+}
+
+function doNothing(): void {
+    return undefined;
+}
+
+function neverDoNothing(msg: string): never {
+    return undefined;
+    // void와 다르게 undefined도 반환하지 않음
+}
+// void와는 다른 개념이다.
+// void는 void의 경우 아무것도 반환하지 않은 경우 함수의 백그라운드에서 undefined 상태로 반환한다.
+// 하지만 never함수는 아무것도 반환하면 안된다는 것을 나타내기 위해 사용하고, 이 함수는 일반적으로ㅓ 예외를 발생시키는 함수가 될 것이다.
+
+function throwNewError(msg: string): never {
+    throw new Error(msg)
+}
+// 그래서 아무것도 반환할 일이 없거나 어떤 루프에서 연속적으로 실행되는 함수이다.
+// 따라서 절대 끝나지 않음!
+
+// 그래서 undefined 또는 이상한 값을 반환한 것과는 다르다.
+// 절대 아무것도 반환할 기회가 없어야 함!
+
+
+
+
+function twoFer(name: string){
+  return name === "" ? `One For you, one for me` : `One For ${name}, one for me`;
+}
+
+console.log(twoFer(""))
+console.log(twoFer("Elton"))
+
+
+
+
+
+
+
