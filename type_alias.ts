@@ -52,3 +52,30 @@ const mySong: Song = {
 console.log(calculatePayout(mySong))
 
 printSong(mySong)
+
+// 선택적 프로퍼티
+
+type Point2 = {
+    x: number;
+    y: number;
+    z?: number;
+};
+
+const myPoint: Point2 = { x: 1, y: 3 };
+
+// readonly 키워드
+type User = {
+    readonly id : number;
+    username : string;
+};
+
+const user: User = {
+    id : 123123,
+    username : "cat"
+};
+
+console.log(user.id);
+
+user.id = 1231231;
+// id값을 설정할 수 없다.
+
