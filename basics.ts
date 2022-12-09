@@ -154,7 +154,9 @@ let gom: {last: string, first: string} = {
 
 
 let single = {first: "Mick", last : "Jagger", age: 432, isAlive: true}
-let single2 = {first: "Mick"}
-printName(single2);
+
+
+let personTest = {first: "Mick"}
+printName(personTest);
 
 
