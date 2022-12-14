@@ -1,27 +1,32 @@
-// type alias
-var number = { x: 34, y: 2 };
-function randomCoordinete() {
-    return { x: Math.random(), y: Math.random() };
-}
-function doublePoint(point) {
-    return { x: point.x * 2, y: point.x * 2 };
-}
-var age = 123123;
-function calculatePayout(song) {
-    return song.numStreams * 0.0033;
-}
-;
-function printSong(song) {
-    console.log("".concat(song.title, " - ").concat(song.artist));
-}
-var mySong = {
-    title: "unchained Melody",
-    artist: "Right",
-    numStreams: 123123,
-    credits: {
-        producer: "Phil Spector",
-        writer: "Alex North"
+// type Point = {
+//     x: number;
+//     y: number;
+// }
+// // type alias
+var dune = {
+    title: "Dune",
+    originalTitle: "Dune Part One",
+    director: "Denis Viee",
+    releaseYear: 2021,
+    boxOffice: {
+        budget: 123123,
+        grossUs: 3910938,
+        grossWorldwide: 3453411152
     }
 };
-console.log(calculatePayout(mySong));
-printSong(mySong);
+var cats = {
+    title: "Cats",
+    director: "Tom Hooper",
+    releaseYear: 2019,
+    boxOffice: {
+        budget: 789099,
+        grossUs: 12355,
+        grossWorldwide: 79871111944
+    }
+};
+function getProfit(x) {
+    var k = x.boxOffice.grossWorldwide - x.boxOffice.grossUs;
+    return k;
+}
+;
+console.log("cat", getProfit(cats));
