@@ -26,12 +26,22 @@ function greet(name: string | string[]) {
     if (typeof name === "string") {
         return `hi ${name}`
     }else{
-        for(let i = 0; i < 3; i++) {
+        for(let i = 0; i < name.length; i++) {
             return `hi ${name[i]}`
         }
     }
 }
 
-console.log(greet(["colt","blue","jangwoo"]))
+
 greet("jangwoo")
+
+
+let color2: [number, number, number] = [1,2,1]
+
+color2.push(1)
+color2.pop()
+color2.pop()
+color2.pop()
+
+console.log(color2)
 

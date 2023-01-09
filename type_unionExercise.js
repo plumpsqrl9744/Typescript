@@ -9,10 +9,15 @@ function greet(name) {
         return "hi ".concat(name);
     }
     else {
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < name.length; i++) {
             return "hi ".concat(name[i]);
         }
     }
 }
-console.log(greet(["colt", "blue", "jangwoo"]));
 greet("jangwoo");
+var color2 = [1, 2, 1];
+color2.push(1);
+color2.pop();
+color2.pop();
+color2.pop();
+console.log(color2);
