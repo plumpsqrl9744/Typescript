@@ -29,6 +29,4 @@ interface Dog {
 const me: Dog = {
     name : "jangwoo",
     age : 26,
-    breed : "Shepherd"
-
 }
